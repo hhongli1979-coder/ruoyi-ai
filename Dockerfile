@@ -84,7 +84,7 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'done' >> /app/start.sh && \ 
     echo '' >> /app/start.sh && \ 
     echo '# Start the RunPod handler' >> /app/start.sh && \ 
-    echo 'python3 handler.py' >> /app/start.sh && 
+    echo 'python3 handler.py' >> /app/start.sh && \
     chmod +x /app/start.sh
 
 EXPOSE 8080
