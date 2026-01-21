@@ -112,6 +112,8 @@
 
 [![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
 
+✅ **已支持 RunPod Serverless 部署**：可使用下方脚本一键构建镜像并在 RunPod 创建 Endpoint。
+
 ### 方式一：一键部署脚本（推荐）⭐
 
 ```bash

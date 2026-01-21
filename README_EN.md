@@ -109,6 +109,8 @@ For detailed setup, configuration, and development guides, visit our comprehensi
 
 [![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
 
+✅ **RunPod Serverless deployment is supported**: use the scripts below to build/push the image and create the endpoint.
+
 ### Option 1: One-Click Deployment (Recommended) ⭐
 
 ```bash
@@ -245,5 +247,4 @@ Special thanks to these amazing open source projects:
 [license-shield]: https://img.shields.io/github/license/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
 [license-url]: https://github.com/hhongli1979-coder/ruoyi-ai/blob/main/LICENSE
-
 
