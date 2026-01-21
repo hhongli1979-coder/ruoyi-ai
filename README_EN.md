@@ -16,8 +16,8 @@
 graphs, digital humans, and AI workflow orchestration*
 
 **[📖 中文文档](README.md)** | **[📚 Documentation](https://doc.pandarobot.chat)** | *
-*[🚀 Live Demo](https://web.pandarobot.chat)** | **[🐛 Report Bug](https://github.com/ageerle/ruoyi-ai/issues)** | *
-*[💡 Request Feature](https://github.com/ageerle/ruoyi-ai/issues)**
+*[🚀 Live Demo](https://web.pandarobot.chat)** | **[🐛 Report Bug](https://github.com/hhongli1979-coder/ruoyi-ai/issues)** | *
+*[💡 Request Feature](https://github.com/hhongli1979-coder/ruoyi-ai/issues)**
 
 </div>
 
@@ -74,9 +74,9 @@ graphs, digital humans, and AI workflow orchestration*
 
 | Component      | GitHub                                                | Gitee                                                | GitCode                                                |
 |----------------|-------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------|
-| Backend API    | [ruoyi-ai](https://github.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitee.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitcode.com/ageerle/ruoyi-ai)       |
+| Backend API    | [ruoyi-ai](https://github.com/hhongli1979-coder/ruoyi-ai)       | [ruoyi-ai](https://gitee.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitcode.com/ageerle/ruoyi-ai)       |
 | User Frontend  | [ruoyi-web](https://github.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitee.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitcode.com/ageerle/ruoyi-web)     |
-| Admin Frontend | [ruoyi-admin](https://github.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitee.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitcode.com/ageerle/ruoyi-admin) |
+| Admin Frontend | [ruoyi-admin](https://github.com/hhongli1979-coder/ruoyi-admin) | [ruoyi-admin](https://gitee.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitcode.com/ageerle/ruoyi-admin) |
 
 ### Collaborative Projects
 
@@ -217,7 +217,7 @@ Special thanks to these amazing open source projects:
 
 <div align="center">
 
-**[⭐ Star this repo](https://github.com/ageerle/ruoyi-ai)** • **[🍴 Fork it](https://github.com/ageerle/ruoyi-ai/fork)
+**[⭐ Star this repo](https://github.com/hhongli1979-coder/ruoyi-ai)** • **[🍴 Fork it](https://github.com/hhongli1979-coder/ruoyi-ai/fork)
 ** • **[📖 中文文档](README.md)** • **[📚 Documentation](https://doc.pandarobot.chat)**
 
 *Built with ❤️ by the RuoYi AI community*
@@ -226,26 +226,25 @@ Special thanks to these amazing open source projects:
 
 <!-- Badge Links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/ageerle/ruoyi-ai.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[contributors-url]: https://github.com/ageerle/ruoyi-ai/graphs/contributors
+[contributors-url]: https://github.com/hhongli1979-coder/ruoyi-ai/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/ageerle/ruoyi-ai.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[forks-url]: https://github.com/ageerle/ruoyi-ai/network/members
+[forks-url]: https://github.com/hhongli1979-coder/ruoyi-ai/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/ageerle/ruoyi-ai.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[stars-url]: https://github.com/ageerle/ruoyi-ai/stargazers
+[stars-url]: https://github.com/hhongli1979-coder/ruoyi-ai/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/ageerle/ruoyi-ai.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[issues-url]: https://github.com/ageerle/ruoyi-ai/issues
+[issues-url]: https://github.com/hhongli1979-coder/ruoyi-ai/issues
 
-[license-shield]: https://img.shields.io/github/license/ageerle/ruoyi-ai.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[license-url]: https://github.com/ageerle/ruoyi-ai/blob/main/LICENSE
-
+[license-url]: https://github.com/hhongli1979-coder/ruoyi-ai/blob/main/LICENSE
 
 
 

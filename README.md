@@ -24,8 +24,8 @@
 *开箱即用的智能AI平台，深度集成 FastGPT、扣子(Coze)、DIFY 等主流AI平台，提供先进的RAG技术、知识图谱、数字人和AI流程编排能力*
 
 **[🇺🇸 English](README_EN.md)** | **[📖 使用文档](https://doc.pandarobot.chat)** | *
-*[🚀 在线体验](https://web.pandarobot.chat)** | **[🐛 问题反馈](https://github.com/ageerle/ruoyi-ai/issues)** | *
-*[💡 功能建议](https://github.com/ageerle/ruoyi-ai/issues)**
+*[🚀 在线体验](https://web.pandarobot.chat)** | **[🐛 问题反馈](https://github.com/hhongli1979-coder/ruoyi-ai/issues)** | *
+*[💡 功能建议](https://github.com/hhongli1979-coder/ruoyi-ai/issues)**
 
 </div>
 
@@ -77,9 +77,9 @@
 
 | 项目模块     | GitHub 仓库                                             | Gitee 仓库                                             | GitCode 仓库                                             |
 |----------|-------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------|
-| 🔧 后端服务  | [ruoyi-ai](https://github.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitee.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitcode.com/ageerle/ruoyi-ai)       |
+| 🔧 后端服务  | [ruoyi-ai](https://github.com/hhongli1979-coder/ruoyi-ai)       | [ruoyi-ai](https://gitee.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitcode.com/ageerle/ruoyi-ai)       |
 | 🎨 用户前端  | [ruoyi-web](https://github.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitee.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitcode.com/ageerle/ruoyi-web)     |
-| 🛠️ 管理后台 | [ruoyi-admin](https://github.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitee.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitcode.com/ageerle/ruoyi-admin) |
+| 🛠️ 管理后台 | [ruoyi-admin](https://github.com/hhongli1979-coder/ruoyi-admin) | [ruoyi-admin](https://gitee.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitcode.com/ageerle/ruoyi-admin) |
 
 ### 合作项目
 
@@ -222,8 +222,8 @@ cd ruoyi-ai
 
 <div align="center">
 
-**[⭐ 点个Star支持一下](https://github.com/ageerle/ruoyi-ai)** • *
-*[🍴 Fork 开始贡献](https://github.com/ageerle/ruoyi-ai/fork)** • **[📚 English](README_EN.md)** • *
+**[⭐ 点个Star支持一下](https://github.com/hhongli1979-coder/ruoyi-ai)** • *
+*[🍴 Fork 开始贡献](https://github.com/hhongli1979-coder/ruoyi-ai/fork)** • **[📚 English](README_EN.md)** • *
 *[📖 查看完整文档](https://doc.pandarobot.chat)**
 
 *用 ❤️ 打造，由 RuoYi AI 开源社区维护*
@@ -232,22 +232,22 @@ cd ruoyi-ai
 
 <!-- Badge Links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/ageerle/ruoyi-ai.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[contributors-url]: https://github.com/ageerle/ruoyi-ai/graphs/contributors
+[contributors-url]: https://github.com/hhongli1979-coder/ruoyi-ai/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/ageerle/ruoyi-ai.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[forks-url]: https://github.com/ageerle/ruoyi-ai/network/members
+[forks-url]: https://github.com/hhongli1979-coder/ruoyi-ai/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/ageerle/ruoyi-ai.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[stars-url]: https://github.com/ageerle/ruoyi-ai/stargazers
+[stars-url]: https://github.com/hhongli1979-coder/ruoyi-ai/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/ageerle/ruoyi-ai.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[issues-url]: https://github.com/ageerle/ruoyi-ai/issues
+[issues-url]: https://github.com/hhongli1979-coder/ruoyi-ai/issues
 
-[license-shield]: https://img.shields.io/github/license/ageerle/ruoyi-ai.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
-[license-url]: https://github.com/ageerle/ruoyi-ai/blob/main/LICENSE
+[license-url]: https://github.com/hhongli1979-coder/ruoyi-ai/blob/main/LICENSE

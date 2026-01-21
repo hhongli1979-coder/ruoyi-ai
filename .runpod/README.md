@@ -63,7 +63,7 @@ CREATE DATABASE `ruoyi-ai` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode
 
 1. **克隆项目仓库**
 ```bash
-git clone https://github.com/ageerle/ruoyi-ai.git
+git clone https://github.com/hhongli1979-coder/ruoyi-ai.git
 cd ruoyi-ai
 ```
 
@@ -419,7 +419,7 @@ curl http://your-endpoint/actuator/metrics
 
 如果遇到问题，可以通过以下渠道获取帮助：
 
-- GitHub Issues: https://github.com/ageerle/ruoyi-ai/issues
+- GitHub Issues: https://github.com/hhongli1979-coder/ruoyi-ai/issues
 - 项目文档: https://doc.pandarobot.chat
 - RunPod 社区: https://discord.gg/runpod
 
@@ -482,7 +482,7 @@ Depending on the features you need, prepare the corresponding API keys:
 
 1. **Clone the project repository**
 ```bash
-git clone https://github.com/ageerle/ruoyi-ai.git
+git clone https://github.com/hhongli1979-coder/ruoyi-ai.git
 cd ruoyi-ai
 ```
 
@@ -838,7 +838,7 @@ Recommend integrating the following monitoring tools:
 
 If you encounter problems, you can get help through the following channels:
 
-- GitHub Issues: https://github.com/ageerle/ruoyi-ai/issues
+- GitHub Issues: https://github.com/hhongli1979-coder/ruoyi-ai/issues
 - Project Documentation: https://doc.pandarobot.chat
 - RunPod Community: https://discord.gg/runpod
 
