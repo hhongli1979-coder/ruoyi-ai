@@ -75,7 +75,7 @@ graphs, digital humans, and AI workflow orchestration*
 | Component      | GitHub                                                | Gitee                                                | GitCode                                                |
 |----------------|-------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------|
 | Backend API    | [ruoyi-ai](https://github.com/hhongli1979-coder/ruoyi-ai)       | [ruoyi-ai](https://gitee.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitcode.com/ageerle/ruoyi-ai)       |
-| User Frontend  | [ruoyi-web](https://github.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitee.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitcode.com/ageerle/ruoyi-web)     |
+| User Frontend  | [ruoyi-web](https://github.com/hhongli1979-coder/ruoyi-web)     | [ruoyi-web](https://gitee.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitcode.com/ageerle/ruoyi-web)     |
 | Admin Frontend | [ruoyi-admin](https://github.com/hhongli1979-coder/ruoyi-admin) | [ruoyi-admin](https://gitee.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitcode.com/ageerle/ruoyi-admin) |
 
 ### Collaborative Projects
@@ -245,6 +245,5 @@ Special thanks to these amazing open source projects:
 [license-shield]: https://img.shields.io/github/license/hhongli1979-coder/ruoyi-ai.svg?style=flat-square
 
 [license-url]: https://github.com/hhongli1979-coder/ruoyi-ai/blob/main/LICENSE
-
 
 

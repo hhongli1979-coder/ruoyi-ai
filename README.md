@@ -78,7 +78,7 @@
 | 项目模块     | GitHub 仓库                                             | Gitee 仓库                                             | GitCode 仓库                                             |
 |----------|-------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------|
 | 🔧 后端服务  | [ruoyi-ai](https://github.com/hhongli1979-coder/ruoyi-ai)       | [ruoyi-ai](https://gitee.com/ageerle/ruoyi-ai)       | [ruoyi-ai](https://gitcode.com/ageerle/ruoyi-ai)       |
-| 🎨 用户前端  | [ruoyi-web](https://github.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitee.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitcode.com/ageerle/ruoyi-web)     |
+| 🎨 用户前端  | [ruoyi-web](https://github.com/hhongli1979-coder/ruoyi-web)     | [ruoyi-web](https://gitee.com/ageerle/ruoyi-web)     | [ruoyi-web](https://gitcode.com/ageerle/ruoyi-web)     |
 | 🛠️ 管理后台 | [ruoyi-admin](https://github.com/hhongli1979-coder/ruoyi-admin) | [ruoyi-admin](https://gitee.com/ageerle/ruoyi-admin) | [ruoyi-admin](https://gitcode.com/ageerle/ruoyi-admin) |
 
 ### 合作项目
