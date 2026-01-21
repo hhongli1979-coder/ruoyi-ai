@@ -36,7 +36,7 @@ RuoYi AI 是一个完整的企业级 AI 助手平台，包含以下三个主要�
 |------|------|--------|------|
 | **后端 API** | [ruoyi-ai](https://github.com/hhongli1979-coder/ruoyi-ai) | Spring Boot 3.4 + Java 17 | AI 服务、数据处理、API 接口 |
 | **管理后台** | [ruoyi-admin](https://github.com/hhongli1979-coder/ruoyi-admin) | Vue 3 + Vben Admin | 系统管理、配置、监控 |
-| **用户前端** | [ruoyi-web](https://github.com/ageerle/ruoyi-web) | Vue 3 | 用户交互、AI 对话界面 |
+| **用户前端** | [ruoyi-web](https://github.com/hhongli1979-coder/ruoyi-web) | Vue 3 | 用户交互、AI 对话界面 |
 
 ## 🚀 快速部署
 
@@ -115,7 +115,7 @@ docker push your-username/ruoyi-ai-admin:latest
 
 ```bash
 # 克隆用户前端仓库
-git clone https://github.com/ageerle/ruoyi-web.git
+git clone https://github.com/hhongli1979-coder/ruoyi-web.git
 cd ruoyi-web
 
 # 构建用户前端镜像（如果有 Dockerfile）

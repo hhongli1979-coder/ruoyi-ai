@@ -295,14 +295,14 @@ docker push your-dockerhub-username/ruoyi-ai:latest
 - [完整部署指南（英文版）](.runpod/README.md)
 - [RuoYi AI 官方文档](https://doc.pandarobot.chat)
 - [RunPod 官方文档](https://docs.runpod.io/)
-- [项目 GitHub 仓库](https://github.com/ageerle/ruoyi-ai)
+- [项目 GitHub 仓库](https://github.com/hhongli1979-coder/ruoyi-ai)
 
 ## 💬 获取帮助
 
 如果您在部署过程中遇到问题，可以：
 
 1. 查看 [完整部署指南](.runpod/README.md) 获取详细信息
-2. 在 [GitHub Issues](https://github.com/ageerle/ruoyi-ai/issues) 提交问题
+2. 在 [GitHub Issues](https://github.com/hhongli1979-coder/ruoyi-ai/issues) 提交问题
 3. 访问 [项目文档](https://doc.pandarobot.chat) 获取更多帮助
 4. 加入社区群组交流（见主 README）
 

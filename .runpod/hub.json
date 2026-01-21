@@ -3,7 +3,7 @@
   "description": "An enterprise-level AI assistant platform integrating FastGPT, Coze, DIFY with RAG, Knowledge Graph, and Digital Human capabilities. Built with Spring Boot 3.4, Java 17, MySQL 8.0, and Redis.",
   "type": "serverless",
   "category": "language-model",
-  "iconUrl": "https://raw.githubusercontent.com/ageerle/ruoyi-ai/main/image/00.png",
+  "iconUrl": "https://raw.githubusercontent.com/hhongli1979-coder/ruoyi-ai/main/image/00.png",
   "config": {
     "runsOn": "GPU",
     "containerDiskInGb": 30,

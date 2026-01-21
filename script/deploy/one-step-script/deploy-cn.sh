@@ -235,7 +235,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
                 echo "正在删除现有目录..."
                 rm -rf ${DEPLOY_DIR}/ruoyi-ai
                 echo "正在克隆 ruoyi-ai-backend 仓库..."
-                cd ${DEPLOY_DIR} && git clone https://gitee.com/ageerle/ruoyi-ai
+                cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-ai
 
                 # 提示选择分支
                 read -p "请输入 ruoyi-ai 仓库的分支名称 [main]: " RUOYI_AI_BRANCH
@@ -253,7 +253,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
         esac
     else
         echo "正在克隆 ruoyi-ai-backend 仓库..."
-        cd ${DEPLOY_DIR} && git clone https://gitee.com/ageerle/ruoyi-ai
+        cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-ai
 
         # 提示选择分支
         read -p "请输入 ruoyi-ai 仓库的分支名称 [main]: " RUOYI_AI_BRANCH
@@ -272,7 +272,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
                 echo "正在删除现有目录..."
                 rm -rf ${DEPLOY_DIR}/ruoyi-admin
                 echo "正在克隆 ruoyi-admin 仓库..."
-                cd ${DEPLOY_DIR} && git clone https://gitee.com/ageerle/ruoyi-admin
+                cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-admin
 
                 # 提示选择分支
                 read -p "请输入 ruoyi-admin 仓库的分支名称 [main]: " RUOYI_ADMIN_BRANCH
@@ -290,7 +290,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
         esac
     else
         echo "正在克隆 ruoyi-ai-admin 仓库..."
-        cd ${DEPLOY_DIR} && git clone https://gitee.com/ageerle/ruoyi-admin
+        cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-admin
 
         # 提示选择分支
         read -p "请输入 ruoyi-admin 仓库的分支名称 [main]: " RUOYI_ADMIN_BRANCH

@@ -235,7 +235,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
                 echo "Deleting existing directory..."
                 rm -rf ${DEPLOY_DIR}/ruoyi-ai
                 echo "Cloning ruoyi-ai-backend repository..."
-                cd ${DEPLOY_DIR} && git clone https://github.com/ageerle/ruoyi-ai
+                cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-ai
                 
                 # Prompt for branch selection
                 read -p "Please enter the branch name for ruoyi-ai repository [main]: " RUOYI_AI_BRANCH
@@ -253,7 +253,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
         esac
     else
         echo "Cloning ruoyi-ai-backend repository..."
-        cd ${DEPLOY_DIR} && git clone https://github.com/ageerle/ruoyi-ai
+        cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-ai
         
         # Prompt for branch selection
         read -p "Please enter the branch name for ruoyi-ai repository [main]: " RUOYI_AI_BRANCH
@@ -272,7 +272,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
                 echo "Deleting existing directory..."
                 rm -rf ${DEPLOY_DIR}/ruoyi-admin
                 echo "Cloning ruoyi-admin repository..."
-                cd ${DEPLOY_DIR} && git clone https://github.com/ageerle/ruoyi-admin
+                cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-admin
                 
                 # Prompt for branch selection
                 read -p "Please enter the branch name for ruoyi-admin repository [main]: " RUOYI_ADMIN_BRANCH
@@ -290,7 +290,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
         esac
     else
         echo "Cloning ruoyi-ai-admin repository..."
-        cd ${DEPLOY_DIR} && git clone https://github.com/ageerle/ruoyi-admin
+        cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-admin
         
         # Prompt for branch selection
         read -p "Please enter the branch name for ruoyi-admin repository [main]: " RUOYI_ADMIN_BRANCH
@@ -309,7 +309,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
                 echo "Deleting existing directory..."
                 rm -rf ${DEPLOY_DIR}/ruoyi-web
                 echo "Cloning ruoyi-ai-web repository..."
-                cd ${DEPLOY_DIR} && git clone https://github.com/ageerle/ruoyi-web
+                cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-web
                 
                 # Prompt for branch selection
                 read -p "Please enter the branch name for ruoyi-web repository [main]: " RUOYI_WEB_BRANCH
@@ -327,7 +327,7 @@ if [[ "${BUILD_CHOICE}" == [Bb]* ]]; then
         esac
     else
         echo "Cloning ruoyi-ai-web repository..."
-        cd ${DEPLOY_DIR} && git clone https://github.com/ageerle/ruoyi-web
+        cd ${DEPLOY_DIR} && git clone https://github.com/hhongli1979-coder/ruoyi-web
         
         # Prompt for branch selection
         read -p "Please enter the branch name for ruoyi-web repository [main]: " RUOYI_WEB_BRANCH

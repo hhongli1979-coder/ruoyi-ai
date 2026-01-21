@@ -209,7 +209,7 @@ fi
 if [ "$DEPLOY_WEB" = true ]; then
     print_header "准备用户前端部署 / Preparing User Frontend Deployment"
     
-    WEB_REPO_URL="https://github.com/ageerle/ruoyi-web.git"
+    WEB_REPO_URL="https://github.com/hhongli1979-coder/ruoyi-web.git"
     WEB_DIR="/tmp/ruoyi-web-deploy"
     
     print_info "克隆用户前端仓库... / Cloning web repository..."
