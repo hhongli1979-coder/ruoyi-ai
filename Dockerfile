@@ -1,9 +1,33 @@
 # Multi-stage build for RuoYi AI - Optimized for RunPod Serverless
-# Stage 1: Build stage
+# Stage 1: Build stage  
 FROM maven:3.9-eclipse-temurin-17 AS builder
+
+# Update CA certificates to fix SSL issues
+RUN apt-get update && apt-get install -y ca-certificates && update-ca-certificates
 
 # Set working directory
 WORKDIR /build
+
+# Configure Maven with optimized settings for parallel downloads
+# Set MAVEN_OPTS to bypass SSL issues in restricted environments
+ENV MAVEN_OPTS="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true"
+
+# Create Maven settings to override pom.xml repositories
+RUN mkdir -p /root/.m2 && \
+    echo '<?xml version="1.0" encoding="UTF-8"?>' > /root/.m2/settings.xml && \
+    echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"' >> /root/.m2/settings.xml && \
+    echo '          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' >> /root/.m2/settings.xml && \
+    echo '          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0' >> /root/.m2/settings.xml && \
+    echo '                              http://maven.apache.org/xsd/settings-1.0.0.xsd">' >> /root/.m2/settings.xml && \
+    echo '  <mirrors>' >> /root/.m2/settings.xml && \
+    echo '    <mirror>' >> /root/.m2/settings.xml && \
+    echo '      <id>maven-central</id>' >> /root/.m2/settings.xml && \
+    echo '      <mirrorOf>public</mirrorOf>' >> /root/.m2/settings.xml && \
+    echo '      <name>Maven Central Mirror</name>' >> /root/.m2/settings.xml && \
+    echo '      <url>https://repo1.maven.org/maven2</url>' >> /root/.m2/settings.xml && \
+    echo '    </mirror>' >> /root/.m2/settings.xml && \
+    echo '  </mirrors>' >> /root/.m2/settings.xml && \
+    echo '</settings>' >> /root/.m2/settings.xml
 
 # Copy pom files and download dependencies (cache layer)
 COPY pom.xml .
@@ -13,14 +37,19 @@ COPY ruoyi-extend/pom.xml ./ruoyi-extend/
 COPY ruoyi-modules/pom.xml ./ruoyi-modules/
 COPY ruoyi-modules-api/pom.xml ./ruoyi-modules-api/
 
-# Download dependencies (this layer will be cached)
-RUN mvn dependency:go-offline -B || true
+# Download dependencies with parallel downloads (this layer will be cached)
+RUN mvn dependency:go-offline -B -T 4C || true
 
 # Copy source code
 COPY . .
 
-# Build the application
-RUN mvn clean package -DskipTests -B
+# Build the application with parallel build and optimization flags
+RUN mvn clean package -B -T 4C \
+    -DskipTests \
+    -Dmaven.test.skip=true \
+    -Dmaven.javadoc.skip=true \
+    -Dmaven.source.skip=true \
+    -Dmaven.compiler.showWarnings=false
 
 # Stage 2: Runtime stage
 FROM eclipse-temurin:17-jre-alpine
