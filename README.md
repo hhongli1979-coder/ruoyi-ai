@@ -108,6 +108,57 @@
 
 **👉 [完整使用文档](https://doc.pandarobot.chat)**
 
+## ☁️ RunPod 云端部署
+
+[![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
+
+### 方式一：一键部署脚本（推荐）⭐
+
+```bash
+# 下载部署文件
+git clone https://github.com/hhongli1979-coder/ruoyi-ai
+cd ruoyi-ai/script/deploy/one-step-script
+
+# 运行 RunPod 一键部署
+./deploy-runpod.sh
+```
+
+脚本会自动：
+- ✅ 构建 Docker 镜像
+- ✅ 推送到 Docker Hub  
+- ✅ 显示 RunPod 配置说明
+
+### 方式二：完整项目部署
+
+部署后端 + 前端管理：
+
+```bash
+cd ruoyi-ai
+./script/deploy/runpod-deploy-full.sh
+```
+
+### 方式三：仅部署后端
+
+```bash
+cd ruoyi-ai
+./script/deploy/runpod-deploy.sh
+```
+
+### 📖 详细文档
+
+- **[RunPod 完整部署指南](docs/RunPod完整部署指南.md)** - 完整项目部署教程
+- **[RunPod 快速部署指南](docs/RunPod快速部署指南.md)** - 后端快速部署
+- **[RunPod 英文文档](.runpod/README.md)** - English documentation
+
+### ✨ 部署优势
+
+- ✅ **一键部署**：单条命令完成镜像构建和推送
+- ✅ **灵活部署**：支持单组件或完整项目部署
+- ✅ **按需计费**：只为实际使用的 GPU 资源付费
+- ✅ **自动扩展**：根据负载自动调整资源
+- ✅ **快速启动**：2-5 分钟内完成部署
+- ✅ **GPU 加速**：支持 RTX 4090、A100 等高性能 GPU
+
 ## 🤝 参与贡献
 
 我们热烈欢迎社区贡献！无论您是资深开发者还是初学者，都可以为项目贡献力量 💪
