@@ -1,0 +1,50 @@
+{
+  "tests": [
+    {
+      "name": "health_check",
+      "input": {
+        "action": "health_check"
+      },
+      "timeout": 30000
+    },
+    {
+      "name": "service_status",
+      "input": {
+        "action": "status"
+      },
+      "timeout": 30000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA GeForce RTX 4090",
+    "gpuCount": 1,
+    "env": [
+      {
+        "key": "MYSQL_HOST",
+        "value": "test-mysql-host"
+      },
+      {
+        "key": "MYSQL_USER",
+        "value": "test-user"
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "value": "test-password"
+      },
+      {
+        "key": "REDIS_HOST",
+        "value": "test-redis-host"
+      }
+    ],
+    "allowedCudaVersions": [
+      "12.7",
+      "12.6",
+      "12.5",
+      "12.4",
+      "12.3",
+      "12.2",
+      "12.1",
+      "12.0"
+    ]
+  }
+}
