@@ -105,6 +105,37 @@ For detailed setup, configuration, and development guides, visit our comprehensi
 
 **[📖 Official Documentation](https://doc.pandarobot.chat)**
 
+## ☁️ RunPod Cloud Deployment
+
+[![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
+
+Deploy RuoYi AI to the cloud in minutes with RunPod Serverless platform!
+
+### 🚀 Quick Deployment
+
+Use our automated deployment script:
+
+```bash
+# Clone the repository
+git clone https://github.com/ageerle/ruoyi-ai.git
+cd ruoyi-ai
+
+# Run deployment script
+./script/deploy/runpod-deploy.sh
+```
+
+### 📖 Documentation
+
+- **[RunPod Quick Start Guide (Chinese)](docs/RunPod快速部署指南.md)** - Detailed Chinese tutorial
+- **[RunPod Complete Deployment Guide](.runpod/README.md)** - Full English documentation
+
+### ✨ Deployment Benefits
+
+- ✅ **Pay-as-you-go**: Only pay for GPU resources you actually use
+- ✅ **Auto-scaling**: Automatically adjust resources based on workload
+- ✅ **Fast deployment**: Complete deployment in 2-5 minutes
+- ✅ **GPU acceleration**: Support for RTX 4090, A100 and other high-performance GPUs
+
 ## 🤝 Contributing
 
 We welcome contributions from developers of all skill levels! Whether you're fixing bugs, adding features, or improving

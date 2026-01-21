@@ -108,6 +108,37 @@
 
 **👉 [完整使用文档](https://doc.pandarobot.chat)**
 
+## ☁️ RunPod 云端部署
+
+[![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
+
+想要快速将 RuoYi AI 部署到云端？使用 RunPod Serverless 平台，只需几分钟即可完成部署！
+
+### 🚀 快速部署
+
+使用我们的自动化部署脚本：
+
+```bash
+# 克隆项目
+git clone https://github.com/ageerle/ruoyi-ai.git
+cd ruoyi-ai
+
+# 运行部署脚本
+./script/deploy/runpod-deploy.sh
+```
+
+### 📖 详细文档
+
+- **[RunPod 快速部署指南](docs/RunPod快速部署指南.md)** - 中文详细教程
+- **[RunPod 完整部署指南](.runpod/README.md)** - 英文完整文档
+
+### ✨ 部署优势
+
+- ✅ **按需计费**：只为实际使用的 GPU 资源付费
+- ✅ **自动扩展**：根据负载自动调整资源
+- ✅ **快速启动**：2-5 分钟内完成部署
+- ✅ **GPU 加速**：支持 RTX 4090、A100 等高性能 GPU
+
 ## 🤝 参与贡献
 
 我们热烈欢迎社区贡献！无论您是资深开发者还是初学者，都可以为项目贡献力量 💪
