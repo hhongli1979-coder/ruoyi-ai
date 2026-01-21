@@ -27,7 +27,7 @@ FROM eclipse-temurin:17-jre-alpine
 
 # Install Python 3 and required packages for handler script
 RUN apk add --no-cache python3 py3-pip curl bash \
-    && pip3 install --no-cache-dir requests runpod
+    && pip3 install --break-system-packages --no-cache-dir requests runpod
 
 # Set working directory
 WORKDIR /app
