@@ -109,31 +109,36 @@ For detailed setup, configuration, and development guides, visit our comprehensi
 
 [![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
 
-Deploy the complete RuoYi AI project to the cloud in minutes with RunPod Serverless platform!
-
-### 🚀 Quick Deployment
-
-#### Deploy Backend API Only
+### Option 1: One-Click Deployment (Recommended) ⭐
 
 ```bash
-# Clone the repository
-git clone https://github.com/ageerle/ruoyi-ai.git
-cd ruoyi-ai
+# Clone repository
+git clone https://github.com/hhongli1979-coder/ruoyi-ai
+cd ruoyi-ai/script/deploy/one-step-script
 
-# Run single component deployment script
-./script/deploy/runpod-deploy.sh
+# Run RunPod one-click deployment
+./deploy-runpod.sh
 ```
 
-#### Deploy Full Stack (Backend + Frontend)
+The script will automatically:
+- ✅ Build Docker image
+- ✅ Push to Docker Hub
+- ✅ Show RunPod configuration instructions
+
+### Option 2: Full Stack Deployment
+
+Deploy backend + frontend:
 
 ```bash
-# Run full stack deployment script
+cd ruoyi-ai
 ./script/deploy/runpod-deploy-full.sh
+```
 
-# Choose deployment option:
-# 1) Backend API only
-# 2) Backend + Admin Frontend
-# 3) Full Stack (Backend + Admin + User Frontend)
+### Option 3: Backend Only
+
+```bash
+cd ruoyi-ai
+./script/deploy/runpod-deploy.sh
 ```
 
 ### 📖 Documentation
@@ -144,6 +149,7 @@ cd ruoyi-ai
 
 ### ✨ Deployment Benefits
 
+- ✅ **One-Click Deploy**: Single command to build and push images
 - ✅ **Flexible Deployment**: Single component or full stack deployment
 - ✅ **Pay-as-you-go**: Only pay for GPU resources you actually use
 - ✅ **Auto-scaling**: Automatically adjust resources based on workload

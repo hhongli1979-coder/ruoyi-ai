@@ -54,6 +54,20 @@ check_command() {
     fi
 }
 
+# 清理临时目录函数 / Cleanup function
+cleanup() {
+    if [ -d "/tmp/ruoyi-admin-deploy" ]; then
+        print_info "清理临时目录... / Cleaning up temporary directories..."
+        rm -rf /tmp/ruoyi-admin-deploy
+    fi
+    if [ -d "/tmp/ruoyi-web-deploy" ]; then
+        rm -rf /tmp/ruoyi-web-deploy
+    fi
+}
+
+# 注册清理函数 / Register cleanup on exit
+trap cleanup EXIT
+
 # 主脚本开始 / Main script starts
 print_header "RuoYi AI - RunPod 完整项目部署助手 / Full Stack Deployment Helper"
 
@@ -181,11 +195,13 @@ if [ "$DEPLOY_ADMIN" = true ]; then
             fi
         else
             print_error "管理后台镜像构建失败 / Admin image build failed"
+            ADMIN_IMAGE="" # 确保变量为空
         fi
         
         cd "$PROJECT_ROOT"
     else
         print_error "管理后台仓库克隆失败 / Admin repository clone failed"
+        ADMIN_IMAGE="" # 确保变量为空
     fi
 fi
 
@@ -209,9 +225,13 @@ if [ "$DEPLOY_WEB" = true ]; then
         WEB_IMAGE="${DOCKER_USERNAME}/ruoyi-ai-web:${IMAGE_TAG}"
         
         cd "$WEB_DIR"
-        # 假设用户前端也有类似的 Dockerfile
-        if [ -f "Dockerfile" ]; then
-            if docker build -t "$WEB_IMAGE" .; then
+        # 检查是否存在 Dockerfile / Check if Dockerfile exists
+        if [ -f "Dockerfile" ] || [ -f "scripts/deploy/Dockerfile" ]; then
+            DOCKERFILE_PATH="Dockerfile"
+            if [ -f "scripts/deploy/Dockerfile" ]; then
+                DOCKERFILE_PATH="scripts/deploy/Dockerfile"
+            fi
+            if docker build -f "$DOCKERFILE_PATH" -t "$WEB_IMAGE" .; then
                 print_success "用户前端镜像构建成功 / Web image built successfully"
                 
                 read -p "是否推送用户前端镜像到 Docker Hub? (y/n) / Push web image to Docker Hub? (y/n): " PUSH_WEB
@@ -224,9 +244,11 @@ if [ "$DEPLOY_WEB" = true ]; then
                 fi
             else
                 print_error "用户前端镜像构建失败 / Web image build failed"
+                WEB_IMAGE="" # 确保变量为空
             fi
         else
             print_warning "用户前端没有 Dockerfile，跳过构建 / No Dockerfile found in web repo, skipping"
+            WEB_IMAGE="" # 确保变量为空
         fi
         
         cd "$PROJECT_ROOT"
@@ -242,15 +264,15 @@ echo ""
 print_success "镜像准备完成！/ Images are ready!"
 echo ""
 
-if [ "$DEPLOY_BACKEND" = true ]; then
+if [ "$DEPLOY_BACKEND" = true ] && [ -n "$BACKEND_IMAGE" ]; then
     echo -e "${GREEN}✓${NC} 后端镜像 / Backend Image: ${BACKEND_IMAGE}"
 fi
 
-if [ "$DEPLOY_ADMIN" = true ]; then
+if [ "$DEPLOY_ADMIN" = true ] && [ -n "$ADMIN_IMAGE" ]; then
     echo -e "${GREEN}✓${NC} 管理后台镜像 / Admin Image: ${ADMIN_IMAGE}"
 fi
 
-if [ "$DEPLOY_WEB" = true ]; then
+if [ "$DEPLOY_WEB" = true ] && [ -n "$WEB_IMAGE" ]; then
     echo -e "${GREEN}✓${NC} 用户前端镜像 / Web Image: ${WEB_IMAGE}"
 fi
 
@@ -266,6 +288,10 @@ ${CYAN}方案 1: 分别部署 (推荐用于独立扩展) / Option 1: Deploy Sepa
 
 为每个组件在 RunPod 创建独立的 Serverless Endpoint：
 
+EOF
+
+if [ -n "$BACKEND_IMAGE" ]; then
+cat << EOF
 ${BLUE}1. 后端 API Endpoint / Backend API Endpoint${NC}
    访问 / Visit: https://www.runpod.io/console/serverless
    - Container Image: ${BACKEND_IMAGE}
@@ -274,17 +300,32 @@ ${BLUE}1. 后端 API Endpoint / Backend API Endpoint${NC}
      REDIS_HOST, REDIS_PORT (可选 / optional)
      SERVER_PORT=8080
 
+EOF
+fi
+
+if [ -n "$ADMIN_IMAGE" ]; then
+cat << EOF
 ${BLUE}2. 管理后台 Endpoint / Admin Frontend Endpoint${NC}
    访问 / Visit: https://www.runpod.io/console/serverless
    - Container Image: ${ADMIN_IMAGE}
    - 环境变量 / Environment Variables:
      VITE_API_URL=<后端API地址 / Backend API URL>
 
+EOF
+fi
+
+if [ -n "$WEB_IMAGE" ]; then
+cat << EOF
 ${BLUE}3. 用户前端 Endpoint / User Frontend Endpoint${NC}
    访问 / Visit: https://www.runpod.io/console/serverless
    - Container Image: ${WEB_IMAGE}
    - 环境变量 / Environment Variables:
      VITE_API_URL=<后端API地址 / Backend API URL>
+
+EOF
+fi
+
+cat << EOF
 
 ${CYAN}方案 2: 统一部署 (开发/测试环境) / Option 2: Unified Deployment (Dev/Test)${NC}
 
