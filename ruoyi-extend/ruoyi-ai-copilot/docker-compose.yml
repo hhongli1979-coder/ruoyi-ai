@@ -47,21 +47,28 @@ services:
       - ruoyi-network
     
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
     
     # 资源限制（可选，根据实际情况调整）
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 2G
-        reservations:
-          cpus: '0.5'
-          memory: 512M
+    # 注意：deploy 配置仅在 Docker Swarm 模式下生效
+    # 对于 docker-compose，使用以下配置：
+    mem_limit: 2g
+    mem_reservation: 512m
+    cpus: 2.0
+    
+    # 如果使用 Docker Swarm，取消注释以下配置：
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '2'
+    #       memory: 2G
+    #     reservations:
+    #       cpus: '0.5'
+    #       memory: 512M
 
 networks:
   ruoyi-network:

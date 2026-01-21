@@ -50,9 +50,10 @@ USER appuser
 # 暴露端口
 EXPOSE 8080
 
-# 健康检查
+# 健康检查（使用 curl，已在上面安装）
+# 注意：如果应用没有 actuator endpoint，请修改为实际的健康检查端点
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:8080/actuator/health || exit 1
+    CMD curl -f http://localhost:8080/ || exit 1
 
 # JVM 参数优化
 ENV JAVA_OPTS="-Xms512m -Xmx1024m -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/app/logs"

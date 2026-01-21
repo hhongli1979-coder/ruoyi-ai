@@ -4,7 +4,7 @@
 # 功能：快速启动和管理 Docker 容器
 ##############################################
 
-set -e
+set -euo pipefail
 
 # 颜色输出
 RED='\033[0;31m'
@@ -159,15 +159,22 @@ rebuild_service() {
 clean_service() {
     print_header "清理容器和镜像"
     print_warn "此操作将删除容器和镜像"
-    read -p "确认继续? (y/N): " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        print_info "正在清理..."
-        docker-compose down -v
-        docker rmi ruoyi-ai-copilot:latest 2>/dev/null || true
-        print_info "✅ 清理完成"
+    
+    # 检查是否为交互式终端
+    if [ -t 0 ]; then
+        read -p "确认继续? (y/N): " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            print_info "正在清理..."
+            docker-compose down -v
+            docker rmi ruoyi-ai-copilot:latest 2>/dev/null || true
+            print_info "✅ 清理完成"
+        else
+            print_info "已取消"
+        fi
     else
-        print_info "已取消"
+        print_warn "非交互式模式，跳过清理操作"
+        print_info "使用 'docker-compose down -v' 手动清理"
     fi
 }
 
