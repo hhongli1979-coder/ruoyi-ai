@@ -175,28 +175,124 @@ app:
 ### Main Modules
 
 ```
-ruoyi-ai-copilot/
+ruoyi-ai-copilot/src/main/java/com/example/demo/
 ├── config/                 # Configuration classes
-│   ├── SpringAIConfiguration.java    # AI client configuration
-│   ├── AppProperties.java            # Application properties
-│   └── ToolCallLoggingAspect.java    # Tool call aspect
+│   ├── SpringAIConfiguration.java      # AI client configuration
+│   ├── AppProperties.java              # Application properties
+│   ├── ToolCallLoggingAspect.java      # Tool call aspect
+│   ├── CustomToolExecutionMonitor.java # Tool execution monitor
+│   ├── GlobalExceptionHandler.java     # Global exception handler
+│   ├── LoggingConfiguration.java       # Logging configuration
+│   └── TaskContextHolder.java          # Task context holder
 ├── controller/             # Controllers
-│   ├── ChatController.java           # Chat interface
-│   ├── LogStreamController.java      # Log stream interface
-│   └── TaskStatusController.java     # Task status interface
+│   ├── ChatController.java             # Chat interface
+│   ├── LogStreamController.java        # Log stream interface
+│   ├── TaskStatusController.java       # Task status interface
+│   └── WebController.java              # Web page controller
 ├── service/                # Service layer
 │   ├── ContinuousConversationService.java  # Continuous conversation
-│   ├── ProjectContextAnalyzer.java         # Project analysis
+│   ├── ProjectContextAnalyzer.java         # Project context analysis
+│   ├── ProjectDiscoveryService.java        # Project discovery service
 │   ├── ProjectTypeDetector.java            # Project type detection
-│   └── ProjectTemplateService.java         # Project templates
+│   ├── ProjectTemplateService.java         # Project templates
+│   ├── TaskSummaryService.java             # Task summary
+│   ├── NextSpeakerService.java             # Next speaker
+│   ├── LogStreamService.java               # Log stream service
+│   └── ToolExecutionLogger.java            # Tool execution logger
 ├── tools/                  # AI tools
-│   ├── FileOperationTools.java       # File operation tools
-│   ├── SmartEditTool.java            # Smart editing
-│   ├── AnalyzeProjectTool.java       # Project analysis
-│   └── ProjectScaffoldTool.java      # Project scaffolding
-└── model/                  # Data models
-    ├── ProjectContext.java           # Project context
-    └── TaskStatus.java               # Task status
+│   ├── BaseTool.java                   # Base tool class
+│   ├── FileOperationTools.java         # File operation tools
+│   ├── ReadFileTool.java               # Read file
+│   ├── WriteFileTool.java              # Write file
+│   ├── EditFileTool.java               # Edit file
+│   ├── ListDirectoryTool.java          # List directory
+│   ├── SmartEditTool.java              # Smart editing
+│   ├── AnalyzeProjectTool.java         # Project analysis
+│   ├── ProjectScaffoldTool.java        # Project scaffolding
+│   └── ToolResult.java                 # Tool result
+├── model/                  # Data models
+│   ├── ProjectContext.java             # Project context
+│   ├── ProjectStructure.java           # Project structure
+│   ├── ProjectType.java                # Project type
+│   └── TaskStatus.java                 # Task status
+├── dto/                    # Data transfer objects
+│   └── ChatRequestDto.java             # Chat request
+├── schema/                 # JSON Schema
+│   ├── JsonSchema.java                 # Schema definition
+│   └── SchemaValidator.java            # Schema validator
+└── utils/                  # Utility classes
+    ├── PathUtils.java                  # Path utilities
+    └── BrowserUtil.java                # Browser utilities
+```
+
+## 🐳 Docker Deployment
+
+### Quick Start with Docker
+
+#### 1. Use Pre-built Image (Recommended)
+
+```bash
+# Pull the image
+docker pull hhongli1979/ruoyi-ai-copilot:latest
+
+# Run container
+docker run -d \
+  -p 8080:8080 \
+  -e SPRING_AI_OPENAI_API_KEY=your-api-key \
+  -v $(pwd)/workspace:/app/workspace \
+  --name ruoyi-copilot \
+  hhongli1979/ruoyi-ai-copilot:latest
+```
+
+#### 2. Build Image Locally
+
+```bash
+# In the ruoyi-ai-copilot directory
+docker build -t ruoyi-ai-copilot:local .
+
+# Run container
+docker run -d \
+  -p 8080:8080 \
+  -e SPRING_AI_OPENAI_API_KEY=your-api-key \
+  -v $(pwd)/workspace:/app/workspace \
+  --name ruoyi-copilot \
+  ruoyi-ai-copilot:local
+```
+
+#### 3. Use Docker Compose (Recommended)
+
+```bash
+# Start services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+```
+
+### Environment Variables
+
+| Environment Variable | Description | Default |
+|---------------------|-------------|---------|
+| `SPRING_AI_OPENAI_API_KEY` | OpenAI API Key (Required) | - |
+| `SPRING_AI_OPENAI_BASE_URL` | API base URL | `https://dashscope.aliyuncs.com/compatible-mode` |
+| `SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL` | Model name | `qwen-plus` |
+| `SERVER_PORT` | Service port | `8080` |
+| `APP_WORKSPACE_ROOT_DIRECTORY` | Workspace directory | `/app/workspace` |
+| `APP_BROWSER_AUTO_OPEN` | Auto-open browser | `false` |
+
+### Data Persistence
+
+Docker container supports mounting the following directories:
+
+```bash
+# Workspace directory (user project files)
+-v /host/path/workspace:/app/workspace
+
+# Logs directory
+-v /host/path/logs:/app/logs
 ```
 
 ## 📖 API Reference

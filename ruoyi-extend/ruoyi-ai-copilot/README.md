@@ -175,28 +175,124 @@ app:
 ### 主要模块
 
 ```
-ruoyi-ai-copilot/
+ruoyi-ai-copilot/src/main/java/com/example/demo/
 ├── config/                 # 配置类
-│   ├── SpringAIConfiguration.java    # AI 客户端配置
-│   ├── AppProperties.java            # 应用属性
-│   └── ToolCallLoggingAspect.java    # 工具调用切面
+│   ├── SpringAIConfiguration.java      # AI 客户端配置
+│   ├── AppProperties.java              # 应用属性
+│   ├── ToolCallLoggingAspect.java      # 工具调用切面
+│   ├── CustomToolExecutionMonitor.java # 工具执行监控
+│   ├── GlobalExceptionHandler.java     # 全局异常处理
+│   ├── LoggingConfiguration.java       # 日志配置
+│   └── TaskContextHolder.java          # 任务上下文
 ├── controller/             # 控制器
-│   ├── ChatController.java           # 聊天接口
-│   ├── LogStreamController.java      # 日志流接口
-│   └── TaskStatusController.java     # 任务状态接口
+│   ├── ChatController.java             # 聊天接口
+│   ├── LogStreamController.java        # 日志流接口
+│   ├── TaskStatusController.java       # 任务状态接口
+│   └── WebController.java              # Web 页面控制器
 ├── service/                # 服务层
 │   ├── ContinuousConversationService.java  # 持续对话
-│   ├── ProjectContextAnalyzer.java         # 项目分析
+│   ├── ProjectContextAnalyzer.java         # 项目上下文分析
+│   ├── ProjectDiscoveryService.java        # 项目发现服务
 │   ├── ProjectTypeDetector.java            # 项目类型检测
-│   └── ProjectTemplateService.java         # 项目模板
+│   ├── ProjectTemplateService.java         # 项目模板
+│   ├── TaskSummaryService.java             # 任务摘要
+│   ├── NextSpeakerService.java             # 下一步处理
+│   ├── LogStreamService.java               # 日志流服务
+│   └── ToolExecutionLogger.java            # 工具执行日志
 ├── tools/                  # AI 工具
-│   ├── FileOperationTools.java       # 文件操作工具
-│   ├── SmartEditTool.java            # 智能编辑
-│   ├── AnalyzeProjectTool.java       # 项目分析
-│   └── ProjectScaffoldTool.java      # 项目脚手架
-└── model/                  # 数据模型
-    ├── ProjectContext.java           # 项目上下文
-    └── TaskStatus.java               # 任务状态
+│   ├── BaseTool.java                   # 工具基类
+│   ├── FileOperationTools.java         # 文件操作工具
+│   ├── ReadFileTool.java               # 读文件
+│   ├── WriteFileTool.java              # 写文件
+│   ├── EditFileTool.java               # 编辑文件
+│   ├── ListDirectoryTool.java          # 列出目录
+│   ├── SmartEditTool.java              # 智能编辑
+│   ├── AnalyzeProjectTool.java         # 项目分析
+│   ├── ProjectScaffoldTool.java        # 项目脚手架
+│   └── ToolResult.java                 # 工具结果
+├── model/                  # 数据模型
+│   ├── ProjectContext.java             # 项目上下文
+│   ├── ProjectStructure.java           # 项目结构
+│   ├── ProjectType.java                # 项目类型
+│   └── TaskStatus.java                 # 任务状态
+├── dto/                    # 数据传输对象
+│   └── ChatRequestDto.java             # 聊天请求
+├── schema/                 # JSON Schema
+│   ├── JsonSchema.java                 # Schema 定义
+│   └── SchemaValidator.java            # Schema 验证
+└── utils/                  # 工具类
+    ├── PathUtils.java                  # 路径工具
+    └── BrowserUtil.java                # 浏览器工具
+```
+
+## 🐳 Docker 部署
+
+### 使用 Docker 快速启动
+
+#### 1. 使用预构建镜像（推荐）
+
+```bash
+# 拉取镜像
+docker pull hhongli1979/ruoyi-ai-copilot:latest
+
+# 运行容器
+docker run -d \
+  -p 8080:8080 \
+  -e SPRING_AI_OPENAI_API_KEY=your-api-key \
+  -v $(pwd)/workspace:/app/workspace \
+  --name ruoyi-copilot \
+  hhongli1979/ruoyi-ai-copilot:latest
+```
+
+#### 2. 本地构建镜像
+
+```bash
+# 在 ruoyi-ai-copilot 目录下
+docker build -t ruoyi-ai-copilot:local .
+
+# 运行容器
+docker run -d \
+  -p 8080:8080 \
+  -e SPRING_AI_OPENAI_API_KEY=your-api-key \
+  -v $(pwd)/workspace:/app/workspace \
+  --name ruoyi-copilot \
+  ruoyi-ai-copilot:local
+```
+
+#### 3. 使用 Docker Compose（推荐）
+
+```bash
+# 启动服务
+docker-compose up -d
+
+# 查看日志
+docker-compose logs -f
+
+# 停止服务
+docker-compose down
+```
+
+### 环境变量配置
+
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `SPRING_AI_OPENAI_API_KEY` | OpenAI API Key（必需） | - |
+| `SPRING_AI_OPENAI_BASE_URL` | API 基础URL | `https://dashscope.aliyuncs.com/compatible-mode` |
+| `SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL` | 模型名称 | `qwen-plus` |
+| `SERVER_PORT` | 服务端口 | `8080` |
+| `APP_WORKSPACE_ROOT_DIRECTORY` | 工作目录 | `/app/workspace` |
+| `APP_BROWSER_AUTO_OPEN` | 自动打开浏览器 | `false` |
+
+### 持久化数据
+
+Docker 容器支持挂载以下目录：
+
+```bash
+# 工作目录（用户项目文件）
+-v /host/path/workspace:/app/workspace
+
+# 日志目录
+-v /host/path/logs:/app/logs
 ```
 
 ## 📖 API 接口
