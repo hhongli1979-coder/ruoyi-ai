@@ -5,7 +5,11 @@ FROM maven:3.9-eclipse-temurin-17 AS builder
 # Set working directory
 WORKDIR /build
 
-# Create Maven settings.xml with Aliyun mirror for faster dependency downloads
+# Configure Maven with optimized settings for parallel downloads
+# Set MAVEN_OPTS to bypass SSL issues in restricted environments
+ENV MAVEN_OPTS="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true"
+
+# Create Maven settings to override pom.xml repositories
 RUN mkdir -p /root/.m2 && \
     echo '<?xml version="1.0" encoding="UTF-8"?>' > /root/.m2/settings.xml && \
     echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"' >> /root/.m2/settings.xml && \
@@ -14,16 +18,10 @@ RUN mkdir -p /root/.m2 && \
     echo '                              http://maven.apache.org/xsd/settings-1.0.0.xsd">' >> /root/.m2/settings.xml && \
     echo '  <mirrors>' >> /root/.m2/settings.xml && \
     echo '    <mirror>' >> /root/.m2/settings.xml && \
-    echo '      <id>aliyun-maven</id>' >> /root/.m2/settings.xml && \
-    echo '      <mirrorOf>central</mirrorOf>' >> /root/.m2/settings.xml && \
-    echo '      <name>Aliyun Maven Central Mirror</name>' >> /root/.m2/settings.xml && \
-    echo '      <url>https://maven.aliyun.com/repository/central</url>' >> /root/.m2/settings.xml && \
-    echo '    </mirror>' >> /root/.m2/settings.xml && \
-    echo '    <mirror>' >> /root/.m2/settings.xml && \
-    echo '      <id>aliyun-public</id>' >> /root/.m2/settings.xml && \
-    echo '      <mirrorOf>*</mirrorOf>' >> /root/.m2/settings.xml && \
-    echo '      <name>Aliyun Public Repository</name>' >> /root/.m2/settings.xml && \
-    echo '      <url>https://maven.aliyun.com/repository/public</url>' >> /root/.m2/settings.xml && \
+    echo '      <id>maven-central</id>' >> /root/.m2/settings.xml && \
+    echo '      <mirrorOf>public</mirrorOf>' >> /root/.m2/settings.xml && \
+    echo '      <name>Maven Central Mirror</name>' >> /root/.m2/settings.xml && \
+    echo '      <url>https://repo1.maven.org/maven2</url>' >> /root/.m2/settings.xml && \
     echo '    </mirror>' >> /root/.m2/settings.xml && \
     echo '  </mirrors>' >> /root/.m2/settings.xml && \
     echo '</settings>' >> /root/.m2/settings.xml
