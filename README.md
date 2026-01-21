@@ -112,28 +112,42 @@
 
 [![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
 
-想要快速将 RuoYi AI 部署到云端？使用 RunPod Serverless 平台，只需几分钟即可完成部署！
+想要快速将 RuoYi AI 完整项目部署到云端？使用 RunPod Serverless 平台，只需几分钟即可完成部署！
 
 ### 🚀 快速部署
 
-使用我们的自动化部署脚本：
+#### 仅部署后端 API
 
 ```bash
 # 克隆项目
 git clone https://github.com/ageerle/ruoyi-ai.git
 cd ruoyi-ai
 
-# 运行部署脚本
+# 运行单组件部署脚本
 ./script/deploy/runpod-deploy.sh
+```
+
+#### 部署完整项目（后端 + 前端）
+
+```bash
+# 运行完整部署脚本
+./script/deploy/runpod-deploy-full.sh
+
+# 脚本会提示选择：
+# 1) 仅后端 API
+# 2) 后端 + 管理后台
+# 3) 完整项目（后端 + 管理后台 + 用户前端）
 ```
 
 ### 📖 详细文档
 
-- **[RunPod 快速部署指南](docs/RunPod快速部署指南.md)** - 中文详细教程
-- **[RunPod 完整部署指南](.runpod/README.md)** - 英文完整文档
+- **[RunPod 完整部署指南](docs/RunPod完整部署指南.md)** - 完整项目部署教程（推荐）
+- **[RunPod 快速部署指南](docs/RunPod快速部署指南.md)** - 后端快速部署
+- **[RunPod 英文文档](.runpod/README.md)** - English documentation
 
 ### ✨ 部署优势
 
+- ✅ **灵活部署**：支持单组件或完整项目部署
 - ✅ **按需计费**：只为实际使用的 GPU 资源付费
 - ✅ **自动扩展**：根据负载自动调整资源
 - ✅ **快速启动**：2-5 分钟内完成部署

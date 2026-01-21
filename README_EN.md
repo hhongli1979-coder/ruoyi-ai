@@ -109,28 +109,42 @@ For detailed setup, configuration, and development guides, visit our comprehensi
 
 [![RunPod](https://api.runpod.io/badge/hhongli1979-coder/ruoyi-ai)](https://console.runpod.io/hub/hhongli1979-coder/ruoyi-ai)
 
-Deploy RuoYi AI to the cloud in minutes with RunPod Serverless platform!
+Deploy the complete RuoYi AI project to the cloud in minutes with RunPod Serverless platform!
 
 ### 🚀 Quick Deployment
 
-Use our automated deployment script:
+#### Deploy Backend API Only
 
 ```bash
 # Clone the repository
 git clone https://github.com/ageerle/ruoyi-ai.git
 cd ruoyi-ai
 
-# Run deployment script
+# Run single component deployment script
 ./script/deploy/runpod-deploy.sh
+```
+
+#### Deploy Full Stack (Backend + Frontend)
+
+```bash
+# Run full stack deployment script
+./script/deploy/runpod-deploy-full.sh
+
+# Choose deployment option:
+# 1) Backend API only
+# 2) Backend + Admin Frontend
+# 3) Full Stack (Backend + Admin + User Frontend)
 ```
 
 ### 📖 Documentation
 
-- **[RunPod Quick Start Guide (Chinese)](docs/RunPod快速部署指南.md)** - Detailed Chinese tutorial
-- **[RunPod Complete Deployment Guide](.runpod/README.md)** - Full English documentation
+- **[Complete Deployment Guide (Chinese)](docs/RunPod完整部署指南.md)** - Full project deployment
+- **[Quick Start Guide (Chinese)](docs/RunPod快速部署指南.md)** - Backend quick start
+- **[RunPod Complete Guide](.runpod/README.md)** - English documentation
 
 ### ✨ Deployment Benefits
 
+- ✅ **Flexible Deployment**: Single component or full stack deployment
 - ✅ **Pay-as-you-go**: Only pay for GPU resources you actually use
 - ✅ **Auto-scaling**: Automatically adjust resources based on workload
 - ✅ **Fast deployment**: Complete deployment in 2-5 minutes
