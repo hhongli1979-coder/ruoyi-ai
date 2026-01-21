@@ -1,0 +1,139 @@
+{
+  "title": "RuoYi AI - Enterprise AI Assistant Platform",
+  "description": "An enterprise-level AI assistant platform integrating FastGPT, Coze, DIFY with RAG, Knowledge Graph, and Digital Human capabilities. Built with Spring Boot 3.4, Java 17, MySQL 8.0, and Redis.",
+  "type": "serverless",
+  "category": "language-model",
+  "iconUrl": "https://raw.githubusercontent.com/ageerle/ruoyi-ai/main/image/00.png",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 30,
+    "presets": [
+      {
+        "name": "Production Environment",
+        "defaults": {
+          "SPRING_PROFILES_ACTIVE": "prod",
+          "SERVER_PORT": "8080",
+          "MYSQL_PORT": "3306",
+          "REDIS_PORT": "6379"
+        }
+      },
+      {
+        "name": "Development Environment",
+        "defaults": {
+          "SPRING_PROFILES_ACTIVE": "dev",
+          "SERVER_PORT": "8080",
+          "MYSQL_PORT": "3306",
+          "REDIS_PORT": "6379"
+        }
+      }
+    ],
+    "env": [
+      {
+        "key": "MYSQL_HOST",
+        "input": {
+          "name": "MySQL Host",
+          "type": "string",
+          "description": "MySQL database host address",
+          "required": true
+        }
+      },
+      {
+        "key": "MYSQL_PORT",
+        "input": {
+          "name": "MySQL Port",
+          "type": "string",
+          "description": "MySQL database port",
+          "default": "3306",
+          "required": false
+        }
+      },
+      {
+        "key": "MYSQL_DATABASE",
+        "input": {
+          "name": "MySQL Database",
+          "type": "string",
+          "description": "MySQL database name",
+          "default": "ruoyi-ai",
+          "required": false
+        }
+      },
+      {
+        "key": "MYSQL_USER",
+        "input": {
+          "name": "MySQL User",
+          "type": "string",
+          "description": "MySQL database username",
+          "required": true
+        }
+      },
+      {
+        "key": "MYSQL_PASSWORD",
+        "input": {
+          "name": "MySQL Password",
+          "type": "string",
+          "description": "MySQL database password",
+          "required": true
+        }
+      },
+      {
+        "key": "REDIS_HOST",
+        "input": {
+          "name": "Redis Host",
+          "type": "string",
+          "description": "Redis server host address",
+          "required": true
+        }
+      },
+      {
+        "key": "REDIS_PORT",
+        "input": {
+          "name": "Redis Port",
+          "type": "string",
+          "description": "Redis server port",
+          "default": "6379",
+          "required": false
+        }
+      },
+      {
+        "key": "REDIS_PASSWORD",
+        "input": {
+          "name": "Redis Password",
+          "type": "string",
+          "description": "Redis server password (optional)",
+          "default": "",
+          "required": false
+        }
+      },
+      {
+        "key": "OPENAI_API_KEY",
+        "input": {
+          "name": "OpenAI API Key",
+          "type": "string",
+          "description": "OpenAI API key for AI capabilities (optional)",
+          "default": "",
+          "required": false
+        }
+      },
+      {
+        "key": "SERVER_PORT",
+        "input": {
+          "name": "Server Port",
+          "type": "string",
+          "description": "Application server port",
+          "default": "8080",
+          "required": false
+        }
+      },
+      {
+        "key": "SPRING_PROFILES_ACTIVE",
+        "input": {
+          "name": "Spring Profile",
+          "type": "string",
+          "description": "Spring Boot active profile (prod or dev)",
+          "default": "prod",
+          "required": false
+        }
+      }
+    ]
+  }
+}
