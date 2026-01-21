@@ -137,7 +137,7 @@ view_status() {
     docker-compose ps
     echo ""
     print_info "容器详细信息:"
-    docker ps --filter "name=ruoyi-ai-copilot" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+    docker ps --filter "name=^/ruoyi-ai-copilot$" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 }
 
 # 重新构建
